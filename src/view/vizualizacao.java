@@ -12,23 +12,23 @@ import model.Modelmotorista;
 
 public class vizualizacao extends javax.swing.JFrame {
 
-    Controllermotorista c = new Controllermotorista();
+    Controllermotorista motorista = new Controllermotorista();
 
     ArrayList<Modelmotorista> clientes;
 
     public void atualizarLista() {
-        clientes = c.getListamotoristaController();
+        clientes = motorista.getListamotoristaController();
 
-        DefaultListModel ln = new DefaultListModel();
+        DefaultListModel listaNomes = new DefaultListModel();
         for (Modelmotorista cliente : clientes) {
-            ((DefaultListModel) ln).addElement(cliente);
+            ((DefaultListModel) listaNomes).addElement(cliente);
         }
-        jList1.setModel(ln);
+        jList1.setModel(listaNomes);
     }
 
     public vizualizacao() {
         initComponents();
-        c.criarTBMotorista();
+        motorista.criarTBMotorista();
         atualizarLista();
     }
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -163,7 +163,7 @@ public class vizualizacao extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        c.excluirmotoristaController(clientes.get(jList1.getSelectedIndex()).getNome());
+         motorista.excluirmotoristaController(clientes.get(jList1.getSelectedIndex()).getNome());
         atualizarLista();
     }//GEN-LAST:event_jButton3ActionPerformed
 

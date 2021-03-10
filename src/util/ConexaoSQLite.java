@@ -4,7 +4,6 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.sql.Statement;
 
 public class ConexaoSQLite {
 
@@ -17,7 +16,7 @@ public class ConexaoSQLite {
             String url = "jdbc:sqlite:" + this.nomeBanco + ".db";
 
             this.conexao = DriverManager.getConnection(url);
-            System.out.println("Conectado");
+            //System.out.println("Conectado");
 
         } catch (SQLException e) {
             System.err.println(e.getMessage());
@@ -33,7 +32,7 @@ public class ConexaoSQLite {
             if (this.conexao.isClosed() == false) {
                 this.conexao.close();
             }
-            System.out.println("desconectado");
+            //System.out.println("desconectado");
         } catch (SQLException e) {
 
             System.err.println(e.getMessage());

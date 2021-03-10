@@ -6,7 +6,7 @@ import model.Modelmotorista;
 public class tela_cadastral_edicao extends javax.swing.JFrame {
 
     Modelmotorista cliente = new Modelmotorista();
-    boolean aux;
+    boolean aux; // quando verdadeira, estou editando um elemento no BD, quando falso estou criando
     
     public tela_cadastral_edicao() {
         initComponents();
@@ -144,10 +144,6 @@ public class tela_cadastral_edicao extends javax.swing.JFrame {
         cliente.setCpf(jTextField2.getText());
         cliente.setCarro(jTextField3.getText());
         
-//        System.out.println(cliente.getNome());
-//        System.out.println(cliente.getCpf());
-//        System.out.println(cliente.getCarro());
-//        System.out.println(cliente.getId());
         if (!aux){
             controle.salvarmotoristaController(cliente);
         }else{            
